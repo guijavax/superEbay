@@ -1,0 +1,11 @@
+version: 3
+services: 
+    db:
+    image: 
+      postgres: 9.4.20
+    volumes: --db_data:/var/lib/postgresql
+    restart: always
+    port: "5432:4432"
+    environment:
+    POSTGRES_USER: guiborges
+    POSTGRES_PASSWORD: 1234
