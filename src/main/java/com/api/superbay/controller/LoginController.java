@@ -1,8 +1,7 @@
 package com.api.superbay.controller;
 
-import static com.api.superebay.utils.Routes.ROOT;
+import static com.api.superebay.utils.Routes.*;
 
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,9 +19,8 @@ public class LoginController {
 	@Autowired
 	private LoginRepositorie repository;
 	
-	@PostMapping(value="/insert", consumes = "json")
+	@PostMapping(path="/insert")
 	public void insert(@RequestBody LoginEntitie login) {
 		repository.save(login);
 	}
-
 }
