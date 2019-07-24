@@ -1,4 +1,4 @@
-package com.api.superebay.utils;
+package com.api.superbay.utils;
 
 public interface Routes {
 	

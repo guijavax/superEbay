@@ -14,7 +14,6 @@ public class LoginEntitie {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@NotNull
 	private Long idLogin;
 	
 	@Column(name="id_user")
