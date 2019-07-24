@@ -3,7 +3,9 @@ package com.api.superbay.services.impl;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.api.superbay.entities.LoginEntitie;
@@ -19,14 +21,17 @@ public class LoginServiceImpl implements LoginService {
 	private LoginRepositorie repository;
 
 	@Override
-	public LoginEntitie login(LoginEntitie entitie) {
+	public ResponseEntity login(LoginEntitie entitie) {
+		
+		final Logger LOGGER = Logger.getLogger(LoginEntitie.class);
 		
 		try {
 			entitie.setDataLogin(LocalDateTime.now().format(DateTimeFormatter.ofPattern(FORMAT)));
-			return repository.save(entitie);
+			return ResponseEntity.ok(repository.save(entitie));
 		} catch (Exception e){
-			System.out.println(e);
+			LOGGER.error(e.getMessage());
 		}
 		return null;
 	}
+	
 }
