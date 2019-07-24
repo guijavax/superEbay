@@ -1,4 +1,4 @@
-package com.api.superBay;
+package com.api.superebay;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
