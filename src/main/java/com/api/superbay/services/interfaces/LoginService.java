@@ -17,5 +17,5 @@ public interface LoginService {
 	 * @return
 	 * metódo responsável por salvar o histórico de login
 	 */
-	ResponseEntity login(LoginEntitie entitie);
+	LoginEntitie login(LoginEntitie entitie);
 }

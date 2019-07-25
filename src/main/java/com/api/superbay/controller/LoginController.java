@@ -3,6 +3,7 @@ package com.api.superbay.controller;
 import static com.api.superbay.utils.Routes.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,8 @@ public class LoginController {
 	LoginService service;
 	
 	@PostMapping(path="/insert")
-	public void insert(@RequestBody LoginEntitie login) {
-		service.login(login);
+	public ResponseEntity insert(@RequestBody LoginEntitie login) {
+		LoginEntitie entitie = service.login(login);
+		return (entitie != null) ? ResponseEntity.ok(entitie) : null;
 	}
 }
