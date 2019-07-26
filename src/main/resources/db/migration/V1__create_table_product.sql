@@ -12,4 +12,7 @@ CREATE TABLE product (
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8;
 
-insert into product ('torradeira black&decker 110''eletro', 4, 3.99, 'torradeira preta black&decker');
+INSERT INTO superebay.product (product_name,category,amount,price,descricao) VALUES 
+('torradeira black&decker 110''''eletro','eletro',13,3.99,'torradeira preta black&decker')
+,('video-game ps4 branco','diversao e entreterimento',3,1.999,'Ps4 branco slim 2 consoles e 2 jogos')
+;
