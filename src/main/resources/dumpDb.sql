@@ -16,6 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `product`
+--
+
+DROP TABLE IF EXISTS `product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `product` (
+  `id_product` int(11) NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(100) NOT NULL,
+  `category` varchar(100) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `price` double NOT NULL,
+  `descricao` varchar(200) NOT NULL,
+  PRIMARY KEY (`id_product`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product`
+--
+
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `login`
 --
 
@@ -27,7 +54,7 @@ CREATE TABLE `login` (
   `id_user` int(11) DEFAULT NULL,
   `data_login` datetime DEFAULT NULL,
   PRIMARY KEY (`id_login`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,13 +63,9 @@ CREATE TABLE `login` (
 
 LOCK TABLES `login` WRITE;
 /*!40000 ALTER TABLE `login` DISABLE KEYS */;
-INSERT INTO `login` VALUES (1,44234,NULL),(2,44234,'2019-07-24 17:19:09'),(3,4423,'2019-07-24 17:29:36'),(4,4423,'2019-07-24 17:32:44'),(5,4423,'2019-07-24 17:33:32'),(6,4422,'2019-07-24 17:34:24');
+INSERT INTO `login` VALUES (1,44234,NULL),(2,44234,'2019-07-24 17:19:09'),(3,4423,'2019-07-24 17:29:36'),(4,4423,'2019-07-24 17:32:44'),(5,4423,'2019-07-24 17:33:32'),(6,4422,'2019-07-24 17:34:24'),(7,7862,'2019-07-25 13:52:49');
 /*!40000 ALTER TABLE `login` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping routines for database 'superebay'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -53,4 +76,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-24 17:50:59
+-- Dump completed on 2019-07-26 14:43:27
