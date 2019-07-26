@@ -7,31 +7,33 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-@Entity
+@Entity(name = "product")
 public class ProductEntitie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idProduct;
-	
-	@Column(name = "cod_product")
-	@NotNull
-	private Long productCod;
-	
+
 	@Column(name = "product_name")
+	@NotNull
 	private String nameProduct;
 	
 	@Column(name = "category")
+	@NotNull
 	private String category;
 	
 	@Column(name="amount")
+	@NotNull
 	private Integer amount;
 	
 	@Column(name = "price")
+	@NotNull
 	private BigDecimal price;
 	
 	@Column(name="descricao")
+	@NotNull
 	private String descri;
 
 	public String getDescri() {
@@ -48,14 +50,6 @@ public class ProductEntitie {
 
 	public void setIdProduct(Long idProduct) {
 		this.idProduct = idProduct;
-	}
-
-	public Long getProductCod() {
-		return productCod;
-	}
-
-	public void setProductCod(Long productCod) {
-		this.productCod = productCod;
 	}
 
 	public String getNameProduct() {
