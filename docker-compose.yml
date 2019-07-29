@@ -1,7 +1,7 @@
-version: "3"
+version: "3.5"
 
 services:
-  db:
+  super-ebay:
     image: mysql:5.7
     restart: always
     volumes: 
@@ -12,14 +12,14 @@ services:
       - MYSQL_USER=guilherme
       - MYSQL_PASSWORD=gui123
     expose: 
-    - "3306"
+    - 3306
 
   app:
     build: .
     depends_on:
-      - db
+      - super-ebay
     ports: 
-      - 8081:8081
+      - 8080:8080
       - 443:443
     environment:
       - DATABASE_HOST=super-ebay

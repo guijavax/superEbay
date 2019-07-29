@@ -15,14 +15,14 @@ apply plugin: "org.springframework.boot"
 compileJava {
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
-    mainClassName       = "com.api.superebay.SuperBayApplication"
+    mainClassName       = "com.api.superbay.SuperBayApplication"
 }
 
 jar {
     baseName = "superEbay"
     group    = "com.api"
     version  = "0.0.1-SNAPSHOT"
-    manifest { attributes "Main-Class": "com.api.superebay.SuperBayApplication" }
+    manifest { attributes "Main-Class": "com.api.superbay.SuperBayApplication" }
 }
 
 
@@ -41,7 +41,7 @@ dependencies {
 	compile ('org.springframework.boot:spring-boot-starter-web')
 	compile ('org.springframework.boot:spring-boot-starter-security')
 
-	compile ('org.flywaydb:flyway-core:5.2.4')
+	// compile ('org.flywaydb:flyway-core:5.2.4')
 	
 	runtime  ('mysql:mysql-connector-java')
 	
