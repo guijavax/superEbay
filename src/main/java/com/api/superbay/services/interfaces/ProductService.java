@@ -10,7 +10,7 @@ import com.api.superbay.entities.ProductEntitie;
 /**
  * 
  * @author gcarneib
- * Classe quer realiza as operações de produto
+ * Classe que realiza as operacoes de produto
  */
 public interface ProductService {
 	

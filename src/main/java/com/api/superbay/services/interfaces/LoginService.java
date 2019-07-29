@@ -7,7 +7,7 @@ import com.api.superbay.entities.LoginEntitie;
 /**
  * 
  * @author gcarneib<br>
- * Classe responsável por efetuar o login
+ * Classe responsavel por efetuar o login
  */
 public interface LoginService {
 	
@@ -15,7 +15,7 @@ public interface LoginService {
 	 * 
 	 * @param entitie
 	 * @return
-	 * metódo responsável por salvar o histórico de login
+	 * metodo responsavel por salvar o historico de login
 	 */
 	LoginEntitie login(LoginEntitie entitie);
 }

@@ -1,11 +1,29 @@
-version: 3
-services: 
-    db:
-    image: 
-      postgres: 9.4.20
-    volumes: --db_data:/var/lib/postgresql
+version: "3"
+
+services:
+  db:
+    image: mysql:5.7
     restart: always
-    port: "5432:4432"
+    volumes: 
+      - ./src/main/resources/dumpDb.sql:/docker-entrypoint-initdb.d/dump.sql
     environment:
-    POSTGRES_USER: guiborges
-    POSTGRES_PASSWORD: 1234
+      - MYSQL_ROOT_PASSWORD=gui123
+      - MYSQL_DATABASE=superebay
+      - MYSQL_USER=guilherme
+      - MYSQL_PASSWORD=gui123
+    expose: 
+    - "3306"
+
+  app:
+    build: .
+    depends_on:
+      - db
+    ports: 
+      - 8081:8081
+      - 443:443
+    environment:
+      - DATABASE_HOST=super-ebay
+      - DATABASE_USER=guilherme
+      - DATABASE_NAME=superebay
+      - DATABASE_PASSWORD=gui123
+      - DATABASE_PORT=3306
