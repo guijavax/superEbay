@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "e2ede5c0-706e-451f-8948-5e81337fea74",
+		"name": "superEbay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "client",
+			"item": [
+				{
+					"name": "findAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/super-ebay/client/findAll",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"super-ebay",
+								"client",
+								"findAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByCpf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/super-ebay/client/findByCpf/11111111",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"super-ebay",
+								"client",
+								"findByCpf",
+								"11111111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByName",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/super-ebay/client/findByName/Maria",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"super-ebay",
+								"client",
+								"findByName",
+								"Maria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertClient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"Jose Guimares\",\r\n        \"cpf\": 333333333,\r\n        \"age\": 35,\r\n        \"address\": {\r\n            \"zipCode\": \"343423\",\r\n            \"street\": \"Rua do Sossego\",\r\n            \"number\": 2222,\r\n            \"district\": \"Softw\",\r\n            \"city\": \"Toronto\",\r\n            \"state\": \"TS\",\r\n            \"country\": \"Canada\"\r\n        }\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/super-ebay/client/insertClient",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"super-ebay",
+								"client",
+								"insertClient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteClient",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/super-ebay/client/deleteClient/9",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"super-ebay",
+								"client",
+								"deleteClient",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateClient",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"clientId\": 12,\r\n\"name\": \"Jose Guimares\",\r\n        \"cpf\": 333333355,\r\n        \"age\": 35,\r\n        \"address\": {\r\n            \"zipCode\": \"343423\",\r\n            \"street\": \"Rua do Sossego\",\r\n            \"number\": 2222,\r\n            \"district\": \"Softw\",\r\n            \"city\": \"Toronto\",\r\n            \"state\": \"TS\",\r\n            \"country\": \"Canada\"\r\n        }\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/super-ebay/client/updateClient",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"super-ebay",
+								"client",
+								"updateClient"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "insertLogin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idUser\" :777\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/super-ebay/insert",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"super-ebay",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "userName",
+						"value": "admin",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "password",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userName\" : \"admin\", \"password\":\"password\"}"
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertProduct",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nameProduct\" : \"video-game ps4 branco\",\n\t\"category\" :\"diversao e entreterimento\",\n\t\"amount\" : 3,\n\t\"price\" : 1.999,\n\t\"descri\" : \"Ps4 branco slim 2 consoles e 2 jogos\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/super-ebay/adm/product/insert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"super-ebay",
+						"adm",
+						"product",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAll products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/super-ebay/adm/product/findAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"super-ebay",
+						"adm",
+						"product",
+						"findAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findProductById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/super-ebay/adm/product/findById/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"super-ebay",
+						"adm",
+						"product",
+						"findById",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -77,3 +77,30 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2019-07-26 14:43:27
+
+
+CREATE TABLE `client` (
+  `id_client` int(11) NOT NULL AUTO_INCREMENT,
+  `client_name` varchar(100) NOT NULL,
+  `cpf` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `zip_code` varchar(20) NOT NULL,
+  `street` varchar(120) NOT NULL,
+  `number` int(11) NOT NULL,
+  `district` varchar(110) NOT NULL,
+  `city` varchar(110) NOT NULL,
+  `country` varchar(100) NOT NULL,
+  `state` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_client`)
+) ENGINE=MEMORY DEFAULT CHARSET=latin1;
+
+
+INSERT INTO client values(1,'Guilherme Alves', 0000000000, 23, '2234433', 'Rua do Bauru', 226, 'Virgina', 'Hoostford', 'Unite States', 'Ca');
+INSERT INTO client values(2,'Maria Sila', 11111111, 24, '455565', 'Rua do Euro', 1122, 'Brasil', 'Uberlandia', 'Brasil', 'Mg');
+INSERT INTO client values(4,'Maria Aparecida', 4444444, 24, '455565', 'Rua do Euro', 1122, 'Brasil', 'Uberlandia', 'Brasil', 'Mg');
+INSERT INTO client values(5,'Maria Clara', 55555555, 24, '455565', 'Rua do Euro', 1122, 'Brasil', 'Uberlandia', 'Brasil', 'Mg');
+INSERT INTO client values(6,'Suzana Alves', 6666666, 24, '455565', 'Rua do Euro', 1122, 'Brasil', 'Uberlandia', 'Brasil', 'Mg');
+INSERT INTO client values(7,'Valeria Souza', 777777, 24, '455565', 'Rua do Euro', 1122, 'Brasil', 'Uberlandia', 'Brasil', 'Mg');
+INSERT INTO client values(8,'Vilmar Rezende', 88888888, 24, '455565', 'Rua do Euro', 1122, 'Brasil', 'Uberlandia', 'Brasil', 'Mg');
+INSERT INTO client values(9,'Carolina Moura', 99999, 24, '455565', 'Rua do Euro', 1122, 'Brasil', 'Uberlandia', 'Brasil', 'Mg');
+INSERT INTO client values(10,'Manoel Minato', 010101010, 24, '455565', 'Rua do Euro', 1122, 'Brasil', 'Uberlandia', 'Brasil', 'Mg');

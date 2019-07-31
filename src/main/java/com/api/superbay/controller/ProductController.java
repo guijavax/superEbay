@@ -42,5 +42,4 @@ public class ProductController {
 		ProductEntitie prod = service.findById(id);
 		return prod != null ? ResponseEntity.ok(prod) : ResponseEntity.noContent().build();
 	}
-	
 }
