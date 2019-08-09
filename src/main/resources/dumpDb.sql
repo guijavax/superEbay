@@ -95,6 +95,31 @@ CREATE TABLE `client` (
 ) ENGINE=MEMORY DEFAULT CHARSET=latin1;
 
 
+CREATE TABLE client (
+  id_client int not null AUTO_INCREMENT PRIMARY KEY,
+  client_name varchar(100) NOT NULL,
+  cpf int NOT NULL,
+  age int NOT NULL,
+  zip_code varchar(20) NOT NULL,
+  street varchar(120) NOT NULL,
+  number int NOT NULL,
+  district varchar(110) NOT NULL,
+  city varchar(110) NOT NULL,
+  country varchar(100) NOT NULL,
+  state varchar(100) NOT NULL
+);
+
+CREATE table order_bay(
+	order_id int not null AUTO_INCREMENT PRIMARY key, 
+	id_product int not null, 
+	id_client int not null,
+	total_order double not null,
+	state_order varchar(100));
+
+ALTER TABLE superebay.order_bay ADD CONSTRAINT FK_CLIENT FOREIGN KEY (id_client) REFERENCES superebay.client(id_client) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE superebay.order_bay ADD CONSTRAINT FK_PRODUCT FOREIGN KEY (id_product) REFERENCES superebay.product(id_product) ON DELETE CASCADE ON UPDATE CASCADE;
+
 INSERT INTO client values(1,'Guilherme Alves', 0000000000, 23, '2234433', 'Rua do Bauru', 226, 'Virgina', 'Hoostford', 'Unite States', 'Ca');
 INSERT INTO client values(2,'Maria Sila', 11111111, 24, '455565', 'Rua do Euro', 1122, 'Brasil', 'Uberlandia', 'Brasil', 'Mg');
 INSERT INTO client values(4,'Maria Aparecida', 4444444, 24, '455565', 'Rua do Euro', 1122, 'Brasil', 'Uberlandia', 'Brasil', 'Mg');

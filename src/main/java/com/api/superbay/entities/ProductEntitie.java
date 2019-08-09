@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -35,6 +37,11 @@ public class ProductEntitie {
 	@Column(name="descricao")
 	@NotNull
 	private String descri;
+	
+	@ManyToOne
+	@JoinColumn
+	@NotNull
+	private PedidoEntitie pedido;
 
 	public String getDescri() {
 		return descri;
@@ -82,5 +89,13 @@ public class ProductEntitie {
 
 	public void setPrice(BigDecimal price) {
 		this.price = price;
+	}
+
+	public PedidoEntitie getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(PedidoEntitie pedido) {
+		this.pedido = pedido;
 	}
 }

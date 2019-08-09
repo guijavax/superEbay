@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -33,6 +35,10 @@ public class ClientEntitie {
 	
 	@Embedded
 	private Address address;
+	
+	@OneToOne
+	@JoinColumn
+	private ProductEntitie product;
 
 	public Long getClientId() {
 		return idClient;
@@ -72,5 +78,13 @@ public class ClientEntitie {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	public ProductEntitie getProduct() {
+		return product;
+	}
+
+	public void setProduct(ProductEntitie product) {
+		this.product = product;
 	}
 }
