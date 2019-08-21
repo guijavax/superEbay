@@ -20,7 +20,7 @@ public interface ProductService {
 	
 	ProductEntitie findById(Long id) throws Exception;
 	
-	ProductEntitie findByName(ProductEntitie product);
+	List<ProductEntitie> findByName(String name);
 	
 	void updateProduct (ProductEntitie product) throws Exception;
 	

@@ -1,11 +1,9 @@
 package com.api.superbay.services.impl;
 
-import java.net.URI;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.api.superbay.entities.ProductEntitie;
@@ -44,9 +42,8 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public ProductEntitie findByName(ProductEntitie product) {
-		// TODO AFTER
-		return null;
+	public List<ProductEntitie> findByName(String name) {
+		return repositorie.findProductByName(name);
 	}
 
 	@Override
