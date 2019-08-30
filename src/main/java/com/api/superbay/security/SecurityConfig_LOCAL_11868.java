@@ -15,7 +15,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 //	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 //		auth.inMemoryAuthentication().withUser("admin").password("1234").roles(ROOT);
 //	}
-//	
+	
 //	@Override
 //	protected void configure(HttpSecurity http) throws Exception {
 //		http.authorizeRequests().antMatchers("*/client/*").permitAll()
