@@ -8,4 +8,8 @@ public enum StatesOrder {
 	StatesOrder(String stateOrder) {
 		this.stateOrder = stateOrder;
 	}
+	
+	public String getStateOrder() {
+		return stateOrder;
+	}
 }
