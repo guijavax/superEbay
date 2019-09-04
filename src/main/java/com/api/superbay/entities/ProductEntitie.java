@@ -41,7 +41,7 @@ public class ProductEntitie {
 	@ManyToOne
 	@JoinColumn
 	@NotNull
-	private PedidoEntitie pedido;
+	private OrderEntitie order;
 
 	public String getDescri() {
 		return descri;
@@ -91,11 +91,11 @@ public class ProductEntitie {
 		this.price = price;
 	}
 
-	public PedidoEntitie getPedido() {
-		return pedido;
+	public OrderEntitie getOrder() {
+		return order;
 	}
 
-	public void setPedido(PedidoEntitie pedido) {
-		this.pedido = pedido;
+	public void setOrder(OrderEntitie order) {
+		this.order = order;
 	}
 }

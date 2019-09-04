@@ -7,7 +7,7 @@ import com.api.superbay.entities.ClientEntitie;
 /**
  * 
  * @author gcarneib
- * Class responsável pelas operacoes do cliente
+ * Class responsavel pelas operacoes do cliente
  */
 public interface ClientService {
 	

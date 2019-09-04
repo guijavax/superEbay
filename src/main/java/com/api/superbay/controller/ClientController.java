@@ -1,5 +1,12 @@
 package com.api.superbay.controller;
 
+import static com.api.superbay.utils.Routes.ROOT;
+
+import java.net.URI;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,14 +23,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.api.superbay.entities.ClientEntitie;
 import com.api.superbay.services.interfaces.ClientService;
-import com.mysql.fabric.Response;
-
-import static com.api.superbay.utils.Routes.*;
-
-import java.net.URI;
-import java.util.List;
-
-import javax.servlet.http.HttpServletResponse;
 
 
 @RestController

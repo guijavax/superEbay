@@ -18,7 +18,7 @@ import com.api.superbay.utils.StatesOrder;
 
 @Entity
 @Table(name="order_bay")
-public class PedidoEntitie {
+public class OrderEntitie {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
