@@ -24,10 +24,10 @@ public class OrderEntitie {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long orderId;
 	
-	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 	private List<ProductEntitie> products;
 	
-	@OneToOne(mappedBy = "client", cascade = CascadeType.ALL)
+	@OneToOne(mappedBy = "orderEntitie", cascade = CascadeType.ALL)
 	private ClientEntitie clientEntitie;
 	
 	@Column(name="total_order")

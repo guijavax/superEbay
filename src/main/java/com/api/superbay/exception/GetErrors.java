@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContext;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.stereotype.Component;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
@@ -18,29 +19,18 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
  * @author guilherme
  *
  */
+@ControllerAdvice
+public interface GetErrors {
 
-public interface GetErrors  {
+	default List<ServiceException.Error> createListError(BindingResult binding) {
 
-	default List<Error> createListError(BindingResult binding) {
-		List<Error> error = new LinkedList<>();
-		binding.getFieldErrors().forEach(fieldError -> {
-			error.add(new Error(fieldError.getField()));
-		});
-		return error;
+		ServiceException serviceException = initializeException();
+		List<ServiceException.Error> errors = serviceException.makeListError(binding);
+
+		return errors;
 	}
-	
-	
-	static class Error {
-		
-		private String userMessage;
-		
-		public Error(String userMessage) {
-			this.userMessage = userMessage;
-		}
-		
-		public String getUserMessage() {
-			return userMessage;
-		}
-	}
+
+	default ServiceException initializeException () { return  new ServiceException(); }
+
 
 }

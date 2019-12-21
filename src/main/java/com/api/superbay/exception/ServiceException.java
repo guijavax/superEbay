@@ -1,6 +1,7 @@
 package com.api.superbay.exception;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
@@ -12,14 +13,14 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-@ControllerAdvice
+
 public class ServiceException extends ResponseEntityExceptionHandler {
 	
 	@Autowired
 	private MessageSource message;
 	
-	private List<Error> makeListError(BindingResult binding) {
-		List<Error> errors = new ArrayList<>();
+	protected List<Error> makeListError(BindingResult binding) {
+		List<Error> errors = new LinkedList<>();
 		
 		binding.getFieldErrors().forEach(fieldError -> {
 			errors.add(new Error(message.getMessage(fieldError, LocaleContextHolder.getLocale())));

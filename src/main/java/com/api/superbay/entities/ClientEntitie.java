@@ -35,10 +35,11 @@ public class ClientEntitie {
 	
 	@Embedded
 	private Address address;
-	
-	@OneToOne
+
 	@JoinColumn
-	private ProductEntitie product;
+	@OneToOne
+	private OrderEntitie orderEntitie;
+
 
 	public Long getClientId() {
 		return idClient;
@@ -80,11 +81,7 @@ public class ClientEntitie {
 		this.address = address;
 	}
 
-	public ProductEntitie getProduct() {
-		return product;
-	}
+	public OrderEntitie getOrderEntitie() {	return orderEntitie; }
 
-	public void setProduct(ProductEntitie product) {
-		this.product = product;
-	}
+	public void setOrderEntitie(OrderEntitie orderEntitie) { this.orderEntitie = orderEntitie; }
 }

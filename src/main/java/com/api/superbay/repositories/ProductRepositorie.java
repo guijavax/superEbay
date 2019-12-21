@@ -12,6 +12,6 @@ import com.api.superbay.entities.ProductEntitie;
 @Repository
 public interface ProductRepositorie extends JpaRepository<ProductEntitie, Long>{
 	
-	@Query(value = "select * from product where product_name like :name%")
+	@Query(value = "select * from product where product_name like :name%", nativeQuery = true)
 	public List<ProductEntitie> findProductByName(@Param("name") String name);
 }
