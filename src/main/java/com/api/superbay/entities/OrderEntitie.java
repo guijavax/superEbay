@@ -23,13 +23,14 @@ public class OrderEntitie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long orderId;
-	
+
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 	private List<ProductEntitie> products;
-	
+
+
 	@OneToOne(mappedBy = "orderEntitie", cascade = CascadeType.ALL)
 	private ClientEntitie clientEntitie;
-	
+
 	@Column(name="total_order")
 	@NotNull
 	private BigDecimal totalOrder;
@@ -39,3 +40,4 @@ public class OrderEntitie {
 	private StatesOrder state;
 	
 }
+

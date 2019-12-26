@@ -48,7 +48,7 @@ public class ClientController {
 	
 	@GetMapping("/findByCpf/{cpf}")
 	public ResponseEntity<ClientEntitie> findByCpf(@PathVariable(name = "cpf") Long cpf) {
-		try {
+		try {git
 			ClientEntitie entitie = service.findByCpf(cpf);
 			return entitie != null ? ResponseEntity.ok(entitie) : ResponseEntity.noContent().build();
 		} catch (Exception e) {

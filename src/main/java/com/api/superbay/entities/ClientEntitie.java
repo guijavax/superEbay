@@ -1,14 +1,6 @@
 package com.api.superbay.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GeneratorType;
@@ -36,8 +28,8 @@ public class ClientEntitie {
 	@Embedded
 	private Address address;
 
-	@JoinColumn
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_client", referencedColumnName = "id_client")
 	private OrderEntitie orderEntitie;
 
 
