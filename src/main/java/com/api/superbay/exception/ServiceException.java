@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
+import org.springframework.beans.TypeMismatchException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContext;
@@ -30,14 +31,25 @@ public class ServiceException extends ResponseEntityExceptionHandler {
 		return handleExceptionInternal(ex, errors, headers, HttpStatus.BAD_REQUEST, request);
 	}
 
+	@Override
+	protected ResponseEntity<Object> handleTypeMismatch(TypeMismatchException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+		List<Error> errors = makeListError(ex);
+		return handleExceptionInternal(ex, errors, headers, HttpStatus.BAD_REQUEST, request);
+	}
 
 	private  List<Error> makeListError(BindingResult binding) {
 		List<Error> errors = new LinkedList<>();
-		
+
 		binding.getFieldErrors().forEach(fieldError -> {
 			errors.add(new Error(message.getMessage(fieldError, LocaleContextHolder.getLocale())));
 		});
-		
+
+		return errors;
+	}
+
+	private List<Error> makeListError(Exception e) {
+		List<Error> errors = new LinkedList<>();
+		errors.add(new Error(e.getMessage(),message.getMessage("mensagem.invalida", null,LocaleContextHolder.getLocale())));
 		return errors;
 	}
 	
@@ -49,6 +61,7 @@ public class ServiceException extends ResponseEntityExceptionHandler {
 		public Error(String userMessage) {
 			this.userMessage = userMessage;
 		}
+
 
 		public Error(String devMessage, String userMessage) {
 			this.userMessage = userMessage;
