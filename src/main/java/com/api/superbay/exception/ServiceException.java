@@ -30,6 +30,7 @@ public class ServiceException extends ResponseEntityExceptionHandler {
 		return handleExceptionInternal(ex, errors, headers, HttpStatus.BAD_REQUEST, request);
 	}
 
+
 	private  List<Error> makeListError(BindingResult binding) {
 		List<Error> errors = new LinkedList<>();
 		
